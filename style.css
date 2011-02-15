@@ -55,7 +55,7 @@ body {
 	background-color: #f2f2e2;
 	width: 420px;
 	text-align: left;
-	margin: 50px auto 50px auto;
+	margin: 50px auto 0px auto;
 	padding: 10px 50px 10px 50px;
 }
 
@@ -107,7 +107,7 @@ p, #about ul {
 
 
 #about p {
-	width: 40em;
+	width: 38em;
 	font-size: 70%;
 	line-height: 180%;
 }
@@ -277,6 +277,27 @@ p, #about ul {
 	background-position: -186px 0px;
 }
 
+#footer {
+	display: block;
+	text-align: right;
+	margin: auto;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding: 12px 20px 6px 20px;
+	text-shadow: #000 0 1px 0;
+	vertical-align: center;
+	width: 520px;
+	}
+#footer p { 
+	color: #F2F2E2; 
+	float: right; 
+	font-size: 70%; 
+}
+		
+#footer p a, #footer p a:hover, #footer p a:focus { 
+	color: #F2F2E2; 
+	text-decoration: none; 
+}
 
 
 
