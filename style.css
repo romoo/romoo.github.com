@@ -59,6 +59,51 @@ body {
 	padding: 10px 50px 10px 50px;
 }
 
+.drop-shadow {
+            position:relative;  
+        }
+
+        .drop-shadow:before,
+        .drop-shadow:after {
+            content:"";
+            position:absolute; 
+            z-index:-2;
+        }
+
+.curled {
+      border:1px solid #efefef; 
+      -moz-border-radius:0 0 120px 120px / 0 0 6px 6px;    
+           border-radius:0 0 120px 120px / 0 0 6px 6px;
+  }
+
+  .curled:before,
+  .curled:after {
+      bottom:12px;
+      left:20px;
+      width:50%;
+      height:55%;
+      max-width:200px;
+      -webkit-box-shadow:0 8px 12px rgba(0, 0, 0, 0.5); 
+         -moz-box-shadow:0 8px 12px rgba(0, 0, 0, 0.5); 
+              box-shadow:0 8px 12px rgba(0, 0, 0, 0.5); 
+      -webkit-transform:skew(-8deg) rotate(-3deg);
+         -moz-transform:skew(-8deg) rotate(-3deg);
+          -ms-transform:skew(-8deg) rotate(-3deg);
+           -o-transform:skew(-8deg) rotate(-3deg);
+              transform:skew(-8deg) rotate(-3deg);
+  } 
+
+  .curled:after { 
+      right:20px; 
+      left:auto;
+      -webkit-transform:skew(8deg) rotate(3deg); 
+         -moz-transform:skew(8deg) rotate(3deg);     
+          -ms-transform:skew(8deg) rotate(3deg);     
+           -o-transform:skew(8deg) rotate(3deg); 
+              transform:skew(8deg) rotate(3deg);
+  }
+
+
 #top {
 	
 }
@@ -73,6 +118,21 @@ h1 {
 	font-size: 300%;
 }
 
+h1 a {
+	text-shadow: 0 1px 0 #9F002C, 
+	               0 2px 0 #9F002C,
+	               0 3px 0 #9F002C,
+	               0 4px 0 #9F002C,
+	               0 5px 0 #9F002C,
+	               0 6px 1px rgba(0,0,0,.1),
+	               0 0 5px rgba(0,0,0,.1),
+	               0 1px 3px rgba(0,0,0,.3),
+	               0 3px 5px rgba(0,0,0,.2),
+	               0 5px 10px rgba(0,0,0,.25),
+	               0 10px 10px rgba(0,0,0,.2),
+	               0 20px 20px rgba(0,0,0,.15);
+}
+
 h2 {
 	margin-top: 1.5em;
 }
@@ -84,7 +144,7 @@ h1#title {
 }
 
 a:link, a:visited {
-	color: #524034;
+	color: #da5867;
 	text-decoration: none;
 }
 
@@ -94,7 +154,7 @@ a:link, a:visited {
 }
 
 #about a:hover {
-	color: #524034;
+	color: #ba4b58;
 }
 
 li:hover ul.sub {
