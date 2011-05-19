@@ -336,6 +336,19 @@ p, #about ul {
 #wakoopa a:hover {
 	background-position: -186px 0px;
 }
+#zhihu a {
+	outline: none;
+	text-indent: -1000em;
+	margin-right: 15px;
+	background:url('icon.jpg') no-repeat -217px -32px;
+	width: 32px;height: 32px;
+	display: block;
+	overflow: hidden;
+}
+
+#zhihu a:hover {
+	background-position: -217px 0px;
+}
 
 #footer {
 	display: block;
