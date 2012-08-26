@@ -16,6 +16,28 @@
     color: #222;
     font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
   }
+  @font-face {
+    font-family: 'Entypo';
+    src: url('./font/font.eot'); /* IE9*/
+    src: url('./font/font.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./font/font.woff') format('woff'), /* chrome、firefox */
+         url('./font/font.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+         url('./font/font.svg#svgFontName') format('svg'); /* iOS 4.1- */
+  }
+  [class^="icon-"]:before,
+  [class*=" icon-"]:before {
+    font-family: 'Entypo';
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: 0.2em;
+    text-align: center;
+    opacity: 0.7;
+    line-height: 1em;
+  }
   ::selection {
       background: #00438A;
       color:#fff;
@@ -98,18 +120,35 @@
     border-top: 1px solid #7a7a7a;
     text-align: center;
   }
+  footer ul{
+    position: relative;
+  }
   footer li{
     display: inline-block;
     width: 280px;
-    background: url(data:image/gif;base64,R0lGODlhBgAGAJEAAEZupp2yz////1d7riH5BAAHAP8ALAAAAAAGAAYAAAIMVDZhwHANEExQnSQKADs=) 0 3px no-repeat;
+  }
+  footer li:last-child::before{
+    color: #00438A;
+/*    background: url(data:image/gif;base64,R0lGODlhBgAGAJEAAEZupp2yz////1d7riH5BAAHAP8ALAAAAAAGAAYAAAIMVDZhwHANEExQnSQKADs=) 0 3px no-repeat;*/
+    content: '·';
+    position: absolute;
+    top: -22px;
+    left: 45%;
+    text-align: center;
+    font-size: 50px;
   }
   footer li:first-child{
-    background: none;
     width: 220px;
   }
-  footer li img{
+  footer li i{
     margin: 0 5px 0 0;
   }
+  .icon-mail-1:before { 
+    content: '\e800'; 
+  } /* '' */
+  .icon-phone:before { 
+    content: '📞'; 
+  } /* '\1f4de' */
   </style>
   <title>陈之光简历</title>
 </head>
@@ -165,8 +204,8 @@
     </article>
     <footer>
       <ul>
-        <li><img src="data:image/gif;base64,R0lGODlhCQAJALMAAEREROrq6p2dnWlpaczMzFtbW4SEhP///8XFxbm5udfX12ZmZkhISIqKivDw8ODg4CH5BAAHAP8ALAAAAAAJAAkAAAQoMCx1qjVrPFvBWgl3GEAjHk7BECcBrEeyVQlQFgNbEQtQ4JwASeCIAAA7" alt="电话" />135 2297 0300</li><!-- 186 1061 0031 这个号码更方便找我 :-) -->
-        <li><img src="data:image/gif;base64,R0lGODlhDgAJALMAAERERFtbW46Ojnp6ektLS5ycnGZmZnNzc6urq1NTU4SEhKenpwAAAAAAAAAAAAAAACH5BAAHAP8ALAAAAAAOAAkAAAQzEBlAqzUoqWPtUQk1CIRFCENnCAEVCFMHKIVhFIpMKK2SB4oSZdfqAEuakAyQXCiXzEUEADs=" alt="邮箱" /><a href="mailto:romoochen@gmail.com?subject=我要包养你！" target="_blank">romoochen@gmail.com</a></li>
+        <li><i class="icon-phone"></i>135 2297 0300</li><!-- 186 1061 0031 这个号码更方便找我 :-) -->
+        <li><i class="icon-mail-1"></i><a href="mailto:romoochen@gmail.com?subject=我要包养你！" target="_blank">romoochen@gmail.com</a></li>
       </ul>
     </footer>
   </section>
