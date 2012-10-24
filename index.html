@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
+<!-- 既然看到这里了，就告诉你一枚彩蛋吧：在页面上依次按下 romoo 五个字母，你懂的 -->
 <head>
   <meta charset="UTF-8">
   <!--
@@ -42,6 +43,11 @@
       background: #00438A;
       color:#fff;
   }
+  #photo{
+    position: absolute;
+    top: 100px;
+    right: 0;
+  }
   h1{
     font-weight: normal;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -68,6 +74,7 @@
     width: 600px;
     margin: 0 auto;
     overflow: hidden;
+    position: relative;
   }
   h2{
     font-weight: normal;
@@ -150,7 +157,7 @@
     content: '\e800'; 
   } /* '' */
   .icon-phone:before { 
-    content: '📞'; 
+    content: ''; 
   } /* '\1f4de' */
   </style>
   <title>陈之光简历</title>
@@ -217,5 +224,23 @@
       </ul>
     </footer>
   </section>
+  <script type="text/javascript">
+  (function (){
+    var k=[],
+        name = document.getElementsByTagName('h1')[0],
+        header = document.getElementsByTagName('header')[0],
+        photo = document.createElement('div');
+    photo.id = 'photo';
+    photo.innerHTML = '<img src="http://img3.douban.com/icon/ul1197621-21.jpg" />';
+    console.log('egg: romoo');
+    document.addEventListener('keydown', function(e){
+      k.push(e.keyCode);
+      if(k.toString().indexOf('82,79,77,79,79')>=0){
+        header.insertBefore(photo, name);
+        k=[];
+      }
+    }, false);
+  })()
+  </script>
 </body>
 </html>
