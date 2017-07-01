@@ -1,219 +1,187 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
-<!-- 既然看到这里了，就告诉你一枚彩蛋吧：在页面上依次按下 romoo 五个字母，你懂的 -->
 <head>
-  <meta charset="UTF-8">
-  <!--
-    IE Sucks
-  -->
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <style type="text/css">
-  body,article,h1,section,h2,dl,dt,dd,footer,ul,li,span,img,b{
-    margin: 0;
-    padding: 0;
-  }
   body{
-    font-size: 12px;
-    line-height: 1;
+    font-size: 14px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-weight: 300;
     color: #222;
-    font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
+    font-family: "PingFang SC", "San Francisco", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", Arial, sans-serif;
   }
-  @font-face {
-    font-family: 'Entypo';
-    src: url('./font/font.eot'); /* IE9*/
-    src: url('./font/font.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('./font/font.woff') format('woff'), /* chrome、firefox */
-         url('./font/font.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-         url('./font/font.svg#svgFontName') format('svg'); /* iOS 4.1- */
-  }
-  [class^="icon-"]:before,
-  [class*=" icon-"]:before {
-    font-family: 'Entypo';
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    display: inline-block;
-    text-decoration: inherit;
-    width: 1em;
-    margin-right: 0.2em;
-    text-align: center;
-    opacity: 0.7;
-    line-height: 1em;
-  }
-  ::selection {
-      background: #00438A;
-      color:#fff;
-  }
-  #photo{
-    position: absolute;
-    top: 100px;
-    right: 0;
+  section{
+    padding: 0 20px;
   }
   h1{
-    font-weight: normal;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: 300;
     text-align: right;
-    color: #797979;
-    font-size: 40px;
-    padding: 20px 0;
-    border-bottom: 1px solid #7a7a7a;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 20px;
+  }
+  h2{
+    font-weight: 300;
+    margin: 40px 0 20px;
   }
   a{
     color: #222;
     text-decoration: none;
-    margin: 0 3px;
+    border-bottom: 1px solid #333;
   }
-  a:hover{
-    color: #00438A;
-    border-bottom: 1px dotted #00438A;
-  }
-  a:active{
-    color: #00438A;
-    border: none;
-  }
-  section#wrap{
-    width: 600px;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-  }
-  h2{
-    font-weight: normal;
-    font-size: 22px;
-    background: #fff;
-    color: #00438A;
-    margin: 20px 0 10px 0;
-    
-  }
-  h2::before{
-    content: '';
-    height: 8px;
-    background: #00438A;
-    width: 20%;
-    float: left;
-    margin: 7px 10% 0 0;
-  }
-  dl{
-    line-height: 1.2;
-    font-size: 0; /* inline-block 3px */
-  }
-  dt{
-    font-size: 14px;
-    display: inline-block;
-    text-align: right;
-    width: 20%;
-    margin: 0 10% 0 0;
-    padding: 6px 0;
-    vertical-align: top;
-  }
+  dl{}
   dd{
-    font-size: 14px;
-    display: inline-block;
-    width: 70%;
-    text-align: left;
-    padding: 6px 0;
+    margin-left: 0;
   }
-  dd span{
+  .info div{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 3px;
+  }
+  .info dt{
+    flex: 0 0 80px;
+    padding-right: 20px;
+    text-align: right;
+    display: inline-block;
+  }
+  .info dd{
+    display: inline-block;
+  }
+  .skill div,
+  .project div,
+  .experience div{
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+  .skill dt,
+  .project dt,
+  .experience dt{
+    color: #000;
+    margin-bottom: 10px;
+  }
+  .skill .level,
+  .project .level,
+  .experience .date{
+    color: #bbb;
     float: right;
-    color: #999;
-  }
-  dd span a{
-    color: #999;
-  }
-  b{
-    font-weight: bold;
-    margin-right: 5px;
-  }
-  footer{
-    padding: 20px 0;
-    margin-top: 20px;
-    font-size: 12px;
-    border-top: 1px solid #7a7a7a;
-    text-align: center;
-  }
-  footer ul{
     position: relative;
+    top: -10px;
+    transform: translateY(-100%);
   }
-  footer li{
-    display: inline-block;
-    width: 280px;
-  }
-  footer li:last-child::before{
-    color: #00438A;
-/*    background: url(data:image/gif;base64,R0lGODlhBgAGAJEAAEZupp2yz////1d7riH5BAAHAP8ALAAAAAAGAAYAAAIMVDZhwHANEExQnSQKADs=) 0 3px no-repeat;*/
-    content: '·';
-    position: absolute;
-    top: -22px;
-    left: 45%;
-    text-align: center;
-    font-size: 50px;
-  }
-  footer li:first-child{
-    width: 220px;
-  }
-  footer li i{
-    margin: 0 5px 0 0;
-  }
-  .icon-mail-1:before { 
-    content: '\e800'; 
-  } /* '' */
-  .icon-phone:before { 
-    content: '📞'; 
-  } /* '\1f4de' */
   </style>
-  <title>陈之光简历</title>
 </head>
 <body>
   <section id="wrap">
     <header><h1>陈之光</h1></header>
     <article>
       <h2>基本情况</h2>
-      <dl>
-        <dt>姓名</dt>
-        <dd>陈之光</dd>
-        <dt>性别</dt>
-        <dd>男</dd>
-        <dt>出生年月</dt>
-        <dd>1988.10</dd>
-        <dt>电话</dt>
-        <dd>135 2297 0300</dd><!-- 186 1061 0031 这个号码更方便找我 :-) -->
-        <dt>邮箱</dt>
-        <dd><a href="mailto:romoochen@gmail.com?subject=我要包养你！" target="_blank">romoochen@gmail.com</a></dd>
-        <dt>Twitter</dt>
-        <dd><a href="https://www.twitter.com/romoo" target="_blank" title="自行翻墙，你懂的">@Romoo</a></dd>
+      <dl class="info">
+        <div>
+          <dt>姓名</dt>
+          <dd>陈之光</dd>
+        </div>
+        <div>
+          <dt>性别</dt>
+          <dd>男</dd>
+        </div>
+        <div>
+          <dt>出生年月</dt>
+          <dd>1988.10</dd>
+        </div>
+        <div>
+          <dt>电话</dt>
+          <dd>186 1061 0031</dd>
+        </div>
+        <div>
+          <dt>邮箱</dt>
+          <dd><a href="mailto:romoochen@gmail.com" target="_blank">romoochen@gmail.com</a></dd>
+        </div>
+        <div>
+          <dt>Twitter</dt>
+          <dd><a href="https://www.twitter.com/romoo" target="_blank" title="自行翻墙，你懂的">@romoo</a></dd>
+        </div>
       </dl>
       <h2>个人技能</h2>
-      <dl>
-        <dt>OS X / iOS</dt>
-        <dd>重度用户<span>日常使用</span></dd>
-        <dt>HTML / CSS</dt>
-        <dd>手写<span>符合标准，语义化</span></dd>
-        <dt>Fireworks / PS</dt>
-        <dd>熟练<span>切图</span></dd>
-        <dt>Git / Node.js</dt>
-        <dd>熟悉<span></span></dd>
-        <dt>JS / jQuery</dt>
-        <dd>熟悉<span></span></dd>
-        <dt>PHP / Python</dt>
-        <dd>了解<span>有项目经验</span></dd>
-        <!-- <dt>「翻墙」</dt>
-        <dd>拿手<span>上网必备</span></dd> -->
+      <dl class="skill">
+        <div>
+          <dt>HTML / CSS</dt>
+          <dd class="level">手写</dd> 
+          <dd>符合标准，语义化</dd>
+        </div>
+        <div>
+          <dt>JS / jQuery / Vue.js</dt>
+          <dd class="level">熟悉</dd> 
+          <dd></dd>
+        </div>
+        <div>
+          <dt>Git / npm / yarn / webpack / sass / nginx</dt>
+          <dd class="level">熟悉</dd> 
+          <dd></dd>
+        </div>
+        <div>
+          <dt>Python / Django / Node.js</dt>
+          <dd class="level">有项目经历</dd> 
+          <dd></dd>
+        </div>
+        <div>
+          <dt>macOS / iOS</dt>
+          <dd class="level">重度用户</dd> 
+          <dd>日常使用</dd>
+        </div>
+        <div>
+          <dt>Sketch / Photoshop</dt>
+          <dd class="level">熟练</dd> 
+          <dd>切图</dd>
+        </div>
       </dl>
       <h2>项目</h2>
-      <dl>
-        <dt>Google Extension</dt>
-        <dd><span><a href="https://github.com/romoo/chrome-boxcar-sender" target="_blank">github</a></span><b>Boxcar Sender</b><br />使用 Chrome 给 Boxcar 发送消息</dd>
+      <dl class="project">
+        <div>
+          <dt><a href="https://m.breadtrip.com" target="_blank">面包旅行 - 手机站点</a></dt>
+          <dd>当前的版本使用 Vue.js 2.0 重构，2017 年 3 月至 6 月，前端页面独立部署</dd>
+          <dd>技术栈：Vue.js, vue-router, vuex, webpack, eslint, sass, fabric</dd>
+        </div>
+        <div>
+          <dt><a href="https://breadtrip.com" target="_blank">面包旅行 - Web版</a></dt>
+          <dd>面包旅行网页版：编辑游记、上传照片、基于地图展示足迹。</dd>
+          <dd>技术栈：jQuery, grunt, Django</dd>
+        </div>
+        <div>
+          <dt><a href="https://github.com/romoo/weapp-demo-breadtrip" target="_blank">面包旅行 - 微信小程序</a></dt>
+          <dd>开源</dd>
+          <dd>基于面包旅行 API 的微信小程序，预览游记、查看目的地信息</dd>
+        </div>
+        <div>
+          <dt>面包猎人精选 - 微信小程序</dt>
+          <dd>一周时间独立开发，完成购买和查看订单功能</dd>
+        </div>
+        <div>
+          <dt>面包民宿 - 后台管理系统</dt>
+          <dd>技术栈：Vue.js, vue-router, vuex, ElementUI, webpack, eslint, lodash, fabric</dd>
+        </div>
+        <div>
+          <dt><a href="https://github.com/romoo/chrome-boxcar-sender" target="_blank">Boxcar Sender</a></dt>
+          <dd>Chrome Extension, 使用 Chrome 给 Boxcar 发送消息</dd>
+        </div>
       </dl>
       <h2>经历</h2>
-      <dl>
-        <dt>2013.06 至今</dt>
-        <dd><b>面包旅行</b>(<a href="http://www.breadtrip.com/" target="_blank">breadtrip.com</a>)<br />前端工程师</dd>
-        <dt>2011.03 - 2013.05</dt>
-        <dd><b>世纪佳缘</b>(<a href="http://www.jiayuan.com/" target="_blank">jiayuan.com</a>)<br />前端工程师</dd>
-        <dt>2011.05 - 2012.03</dt>
-        <dd><b>长草了</b>(<a href="http://www.zhangcaole.com/item/detail?id=3086" target="_blank">zhangcaole.com</a>)，业余项目<br />80% 前端，20% JS</dd>
-        <dd style="margin-left: 30%;"><b>虾米皮</b>(<a href="http://dev.xiamipi.com/" target="_blank">xiamipi.com</a>)，业余项目<br />60% 前端，20% PHP</dd>
-        <dt>2010.05 - 2010.07</dt>
-        <dd><b>傲博软件</b>(<a href="http://www.aobosoft.com/" target="_blank">aobosoft.com</a>)，实习</dd>
+      <dl class="experience">
+        <div>
+          <dt>面包旅行</dt>
+          <dd class="date">2013.06 至今</dd>
+          <dd>前端负责人</dd>
+        </div>
+        <div>
+          <dt>世纪佳缘</dt>
+          <dd class="date">2011.03 - 2013.05</dd>
+          <dd>前端工程师</dd>
+        </div>
       </dl>
       <h2>教育背景</h2>
       <dl>
@@ -221,30 +189,6 @@
         <dd>威海职业学院，山东威海<br />模具设计与制造专业</dd>
       </dl>
     </article>
-    <footer>
-      <ul>
-        <li><i class="icon-phone"></i>135 2297 0300</li><!-- 186 1061 0031 这个号码更方便找我 :-) -->
-        <li><i class="icon-mail-1"></i><a href="mailto:romoochen@gmail.com?subject=我要包养你！" target="_blank">romoochen@gmail.com</a></li>
-      </ul>
-    </footer>
   </section>
-  <script type="text/javascript">
-  (function (){
-    var k=[],
-        name = document.getElementsByTagName('h1')[0],
-        header = document.getElementsByTagName('header')[0],
-        photo = document.createElement('div');
-    photo.id = 'photo';
-    photo.innerHTML = '<img src="http://img3.douban.com/icon/ul1197621-21.jpg" />';
-    console.log('egg: romoo');
-    document.addEventListener('keydown', function(e){
-      k.push(e.keyCode);
-      if(k.toString().indexOf('82,79,77,79,79')>=0){
-        header.insertBefore(photo, name);
-        k=[];
-      }
-    }, false);
-  })()
-  </script>
 </body>
 </html>
